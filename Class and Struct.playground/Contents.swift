@@ -60,10 +60,26 @@ var personClass2 = personClass
 personClass2.lastName = "Wozniak"
 personStruct2.lastName = "Wozniak"
 
-// Struct, quando mudada, a cópia é diferente do original. O Class, quando mudada, muda o original também:
+// Struct, quando mudada/copiada, a cópia é diferente do original. O Class, quando mudada/copiada, muda o original também:
 
 print(personStruct2.lastName)
 print(personStruct.lastName)
 
 print(personClass.lastName)
 print(personClass2.lastName)
+
+///Herança - dois pontos e o nome do class q ta herdando:
+class AdultPerson: PersonClass {
+    let boleto: Int
+    init(boleto: Int, firstName: String, lastName: String, isAlive: Bool) {
+        self.boleto = boleto
+        super.init(firstName: firstName, lastName: lastName, isAlive: isAlive)
+    }
+}
+
+let adultPerson = AdultPerson(boleto: 2000,
+                              firstName: "Leo",
+                              lastName: "Cunha",
+                              isAlive: true)
+adultPerson.boleto
+adultPerson.play()
