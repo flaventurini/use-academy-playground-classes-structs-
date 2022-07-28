@@ -75,6 +75,14 @@ class AdultPerson: PersonClass {
         self.boleto = boleto
         super.init(firstName: firstName, lastName: lastName, isAlive: isAlive)
     }
+    
+    func sleep() {
+        print("Bora dormir")
+    }
+    
+    override func play() {
+        print("Bingo")
+    }
 }
 
 let adultPerson = AdultPerson(boleto: 2000,
@@ -83,3 +91,4 @@ let adultPerson = AdultPerson(boleto: 2000,
                               isAlive: true)
 adultPerson.boleto
 adultPerson.play()
+adultPerson.sleep()
