@@ -42,6 +42,10 @@ class PersonClass {
         self.isAlive = isAlive
     }
     
+    deinit {
+        print("C'est fini")
+    }
+    
     func play() {
         print("Jogando bola")
     }
@@ -93,4 +97,10 @@ adultPerson.boleto
 adultPerson.play()
 adultPerson.sleep()
 
-//
+/// deInit (codigo add no PersonClass)
+for _ in 1...3 {
+    let person = PersonClass(firstName: "Brenno",
+                             lastName: "Silva",
+                             isAlive: true)
+    person.play()
+}
