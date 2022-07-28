@@ -23,7 +23,7 @@ let number: Int = 30
 
 struct PersonStruct {
     let firstName: String
-    let lastName: String
+    var lastName: String
     let isAlive: Bool
 }
 
@@ -33,7 +33,7 @@ let personStruct = PersonStruct(firstName: "Steve",
 
 class PersonClass {
     let firstName: String
-    let lastName: String
+    var lastName: String
     let isAlive: Bool
     
     init(firstName: String, lastName: String, isAlive: Bool) {
@@ -52,3 +52,18 @@ var personClass: PersonClass = PersonClass(firstName: "Steve",
                                            isAlive: false)
 personClass.firstName
 personClass.play()
+
+/// Cópia e referência
+var personStruct2 = personStruct
+var personClass2 = personClass
+
+personClass2.lastName = "Wozniak"
+personStruct2.lastName = "Wozniak"
+
+// Struct, quando mudada, a cópia é diferente do original. O Class, quando mudada, muda o original também:
+
+print(personStruct2.lastName)
+print(personStruct.lastName)
+
+print(personClass.lastName)
+print(personClass2.lastName)
