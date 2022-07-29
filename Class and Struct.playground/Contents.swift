@@ -146,8 +146,8 @@ let concreteName = setName(name: nil)
 print(concreteName)
 
 // 5) Outra forma não legal de fazer funcionar (forced wrap):
-func setAge(age: Int?) -> Int {
+/* func setAge(age: Int?) -> Int {
     age!
 }
 
-setAge(age: nil)
+setAge(age: nil) */
