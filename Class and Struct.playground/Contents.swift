@@ -104,3 +104,50 @@ for _ in 1...3 {
                              isAlive: true)
     person.play()
 }
+
+//Optionals
+
+var age: Int?
+age = 10
+// print(age)
+
+// 1) Optional Binding:
+if let unrappedAge = age { //poderia nomear o unrappedAge como age que não teria problema
+    print(unrappedAge + 1)
+} else {
+    print("Tem nada aqui não")
+}
+
+// 2) Optional Chaining:
+var name: String?
+print(name?.last) // o próprio xcode coloca o ? pra dizer q é um optional (se existir, ele imprime; se não, é nulo).
+name = "Isabora<3"
+print(name?.last)
+
+if let lastName = name?.last {
+    print(lastName)
+}
+
+// 3) Guard let:
+func auth(password: Int?) { // O password é uma string/inteiro opcional ou nulo
+    guard let password = password else { return }
+    password / 2
+}
+
+auth(password: nil)
+auth(password: 2000)
+
+// 4) Coalescing Operator:
+func setName(name: String?) -> String {
+    name ?? "Não tem nome aqui"
+}
+
+let concreteName = setName(name: nil)
+print(concreteName)
+
+// 5) Outra forma não legal de fazer funcionar (forced wrap):
+func setAge(age: Int?) -> Int {
+    age!
+}
+
+setAge(age: nil)
